@@ -2,7 +2,7 @@
 <h3>Dharani E</h3>
 <h3>212221230021</h3>
 <h1> <align=center> SUM ARRAY ON HOST AND DEVICE </h3>
-#### PCA-GPU-based-vector-summation.-Explore-the-differences.
+PCA-GPU-based-vector-summation.-Explore-the-differences.
 i) Using the program sumArraysOnGPU-timer.cu, set the block.x = 1023. Recompile and run it. Compare the result with the execution configuration of block.x = 1024. Try to explain the difference and the reason.
 
 ii) Refer to sumArraysOnGPU-timer.cu, and let block.x = 256. Make a new kernel to let each thread handle two elements. Compare the results with other execution confi gurations.
