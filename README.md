@@ -29,6 +29,10 @@ Google Colab with NVCC Compiler
 
 ## PROGRAM:
 ```
+!pip install git+https://github.com/andreinechaev/nvcc4jupyter.git
+%load_ext nvcc4jupyter
+```
+```
 %%cuda
 #include <cuda_runtime.h>
 #include <stdio.h>
@@ -208,7 +212,7 @@ int main(int argc, char **argv)
     CHECK(cudaMemcpy(d_C, gpuRef, nBytes, cudaMemcpyHostToDevice));
 
     // invoke kernel at host side
-    int iLen = 256;
+    int iLen = 1024;
     dim3 block (iLen);
     dim3 grid  ((nElem + block.x - 1) / block.x);
 
@@ -243,8 +247,12 @@ int main(int argc, char **argv)
 }
 ```
 ## OUTPUT:
-
-![image](https://github.com/dharanielango/PCA-EXP-1-SUM-ARRAY-GPU-AY-23-24/assets/94530523/fa3b33d9-fdbf-4750-a359-5cc77379070c)
+### Block Size 256
+![image](https://github.com/dharanielango/PCA-EXP-1-SUM-ARRAY-GPU-AY-23-24/assets/94530523/585687e8-64f7-46c6-8036-7158608f1811)
+### Block Size 1023
+![image](https://github.com/dharanielango/PCA-EXP-1-SUM-ARRAY-GPU-AY-23-24/assets/94530523/d64e73c1-48e6-45cf-afb4-df628d9eb603)
+### Block Size 1024
+![image](https://github.com/dharanielango/PCA-EXP-1-SUM-ARRAY-GPU-AY-23-24/assets/94530523/ed1c4016-1ae3-4f69-8c51-eff125ae87d6)
 
 ## RESULT:
 Thus, Implementation of sum arrays on host and device is done in nvcc cuda using random number.
